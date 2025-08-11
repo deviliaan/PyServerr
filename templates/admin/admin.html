@@ -37,10 +37,10 @@
         <h3 class="mb-4">Admin Dashboard</h3>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="#overview" class="nav-link active">Overview</a>
+                <a href="#overview" class="nav-link">Overview</a>
             </li>
             <li>
-                <a href="#projects" class="nav-link">Movies</a>
+                <a href="/admin/movies" class="nav-link active">Movies</a>
             </li>
             <li>
                 <a href="#users" class="nav-link">TV</a>
@@ -55,7 +55,6 @@
         </div>
     </div>
     <div class="content">
-        {% block title %}{% endblock title %}
         {% block content %} {% endblock content %}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

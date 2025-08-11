@@ -4,6 +4,22 @@ Dashboard - Admin Panel
 {% endblock title %}
 {% block content %}
 <div>
-    Dashboard content goes here.
+    <div>
+        <h2>Welcome to the Admin Dashboard</h2>
+        <p>This is where you can manage your application settings, view statistics, and more.</p>
+    </div>
+    <div>
+        <h3>Recent Activities</h3>
+        <ul>
+            <li>User JohnDoe logged in.</li>
+            <li>Movie "Inception" added to the database.</li>
+            <li>TV show "Breaking Bad" updated.</li>
+        </ul>
+    </div>
+    <div class="card p-2">
+        <h3>Statistics</h3>
+        <p>Total Movies: {{movies_count}}</p>
+        <p>Total TV Shows: {{ tv_count }}</p>
+    </div>
 </div>
 {% endblock content %}

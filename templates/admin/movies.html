@@ -1,0 +1,40 @@
+{% extends "admin/admin.html" %}
+{% block title %}
+Movies Management - Admin Panel
+{% endblock title %}
+{% block content %}
+<div>
+    <div>
+        <table style="width: 100%;">
+            <thead>
+                <tr class="">
+                    <th>Movie Name</th>
+                    <th>FE</th>
+                    <th>Nfo</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in movies %}
+                <tr class="">
+                    <td>{{ movie.name }}</td>
+                    <td>
+                        <span class="badge {{'text-bg-success' if movie.path else 'text-bg-danger'}}">{{ "YES" if movie.path else "NO" }}</span>
+                    </td>
+                    <td>
+                        <span class="badge {{'text-bg-success' if movie.nfo else 'text-bg-danger'}}">{{ "YES" if movie.nfo else "NO" }}</span>
+                    </td>
+                    <td>
+                        {% if not movie.nfo %}
+                            <a href="/admin/movies/nfo/{{ movie.name }}" class="btn btn-sm btn-primary">Generate NFO</a>
+                        {% endif %}
+                        <a href="/admin/movies/edit/{{ movie.name }}" class="btn btn-sm btn-secondary">Edit</a>
+                        <a href="/admin/movies/delete/{{ movie.name }}" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>   
+</div>
+{% endblock content %}
