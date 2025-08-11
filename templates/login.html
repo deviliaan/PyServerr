@@ -7,7 +7,23 @@
 
 
 {% block content %}
-<div>
-    Login Page
+<div id="login-container">
+    <div>
+        <form action="/auth/login" method="post">
+            <div id="login-header">
+                <h2>PyServerr</h2>
+                <span>Login</span>
+            </div>
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </div>
 {%endblock%}
